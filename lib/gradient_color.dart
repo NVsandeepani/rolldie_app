@@ -16,6 +16,7 @@ class GradientColor extends StatelessWidget {
     final Color color1;
     final Color color2;
 
+  void rollDice(){}
   // This widget is the root of your application.
   @override
   Widget build( context) {
@@ -28,8 +29,26 @@ class GradientColor extends StatelessWidget {
         ),
       ),
       child:   Center(
-        child: Image.asset("assets/images/dice-1.png",
-        width: 200,), 
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children:[ 
+            Image.asset(
+            "assets/images/dice-1.png",
+              width: 200
+              ),
+              const SizedBox(height: 20),
+              TextButton(
+              onPressed: rollDice,
+              style: TextButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  textStyle: const TextStyle(
+                  fontSize: 24,
+                  color: Color.fromARGB(255, 235, 233, 233),
+              ),
+              ), 
+              child: const Text('Roll Dice'),)
+              ],
+        ), 
      )
       );
   }
